@@ -55,9 +55,9 @@
 					callback( languageCode, that[ languageCode ] );
 				};
 
-			// if ( !this[ languageCode ] )
-				// CKEDITOR.scriptLoader.load( CKEDITOR.getUrl( 'lang/' + languageCode + '.js' ), loadedCallback, this );
-			// else
+			if ( !this[ languageCode ] )
+				CKEDITOR.scriptLoader.load( CKEDITOR.getUrl( 'lang/' + languageCode + '.js' ), loadedCallback, this );
+			else
 				loadedCallback();
 		},
 

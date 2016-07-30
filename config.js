@@ -5,7 +5,7 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
-	config.language = 'zh-cn';
+	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	config.skin = 'moono';//原来是在ckeditor中设置的
 	// %REMOVE_START%
