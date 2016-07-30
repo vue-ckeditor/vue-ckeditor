@@ -415,6 +415,9 @@
 
 	function loadLang( editor ) {
 		CKEDITOR.lang.load( editor.config.language, editor.config.defaultLanguage, function( languageCode, lang ) {
+			console.log(languageCode)
+			console.log(lang);
+			
 			var configTitle = editor.config.title;
 
 			/**
@@ -463,6 +466,8 @@
 
 			preloadStylesSet( editor );
 		} );
+
+
 	}
 
 	// Preloads styles set file (config.stylesSet).
