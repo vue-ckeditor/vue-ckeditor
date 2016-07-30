@@ -1,0 +1,44 @@
+{
+  "name": "vue-ckeditor",
+  "version": "1.0.0",
+  "description": "a vue-component of rich text editor is based on ckeditor.",
+  "main": "ckeditor-component",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-ckeditor/vue-ckeditor.git"
+  },
+  "keywords": [
+    "ckeditor",
+    "vue",
+    "webpack"
+  ],
+  "author": "hccde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vue-ckeditor/vue-ckeditor/issues"
+  },
+  "homepage": "https://github.com/vue-ckeditor/vue-ckeditor#readme",
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-runtime": "^6.9.2",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue": "^1.0.26",
+    "vue-hot-reload-api": "^1.3.3",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "^8.5.3",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.1"
+  }
+}
