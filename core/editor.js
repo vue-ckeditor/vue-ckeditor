@@ -463,6 +463,8 @@
 
 			preloadStylesSet( editor );
 		} );
+
+
 	}
 
 	// Preloads styles set file (config.stylesSet).

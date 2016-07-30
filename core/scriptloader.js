@@ -142,9 +142,12 @@ CKEDITOR.scriptLoader = ( function() {
 							};
 						}
 					}
-
 					// Append it to <head>.
-					script.appendTo( CKEDITOR.document.getHead() );
+					if(1){//插件打包进来
+						onLoad( url, true );
+					}else{
+						// script.appendTo( CKEDITOR.document.getHead() );
+					}
 
 					CKEDITOR.fire( 'download', url ); // %REMOVE_LINE%
 				};

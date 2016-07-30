@@ -167,7 +167,7 @@
 	function loadCss( part, callback ) {
 		// Avoid reload.
 		if ( !cssLoaded[ part ] ) {
-			CKEDITOR.document.appendStyleSheet( getCssPath( part ) );
+			// CKEDITOR.document.appendStyleSheet( getCssPath( part ) ); //now  we  use webpack
 			cssLoaded[ part ] = 1;
 		}
 
