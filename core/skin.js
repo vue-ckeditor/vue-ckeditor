@@ -130,9 +130,10 @@
 			// If we use apostrophes in background-image, we must escape apostrophes in path (just to be sure). (#13361)
 			if ( path )
 				path = path.replace( /'/g, '\\\'' );
-
+				path = '.'+path.slice(path.indexOf('/plugins'));
+				var iconObj = require('../.icons');
 			return path &&
-				( 'background-image:url(\'' + CKEDITOR.getUrl( path ) + '\');background-position:0 ' + offset + 'px;background-size:' + bgsize + ';' );
+				( 'background-image:url(\'' + iconObj[path.replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c')] + '\');background-position:0 ' + offset + 'px;background-size:' + bgsize + ';' );
 		}
 	};
 
@@ -164,10 +165,11 @@
 		return CKEDITOR.getUrl( getConfigPath() + part + '.css' );
 	}
 
+
 	function loadCss( part, callback ) {
 		// Avoid reload.
 		if ( !cssLoaded[ part ] ) {
-			// CKEDITOR.document.appendStyleSheet( getCssPath( part ) ); //now  we  use webpack
+			// CKEDITOR.document.appendStyleSheet( getCssPath( part ) ); //now  we  use webpack .two css files
 			cssLoaded[ part ] = 1;
 		}
 

@@ -7,6 +7,7 @@
  * @fileOverview The Source Editing Area plugin. It registers the "source" editing
  *		mode, which displays raw  HTML data being edited in the editor.
  */
+require('./icons/source.png');
 
 ( function() {
 	CKEDITOR.plugins.add( 'sourcearea', {

@@ -112,8 +112,7 @@
 
 		// Convert current value into array.
 		if ( !CKEDITOR.tools.isArray( curContentsCss ) )
-			cfg.contentsCss = curContentsCss ? [ curContentsCss ] : [];
-
+			cfg.contentsCss = curContentsCss ? [ curContentsCss ] : [];	
 		cfg.contentsCss.push( cssPath );
 	};
 
@@ -376,17 +375,17 @@
 						// The base must be the first tag in the HEAD, e.g. to get relative
 						// links on styles.
 						baseTag && ( data = data.replace( /<head[^>]*?>/, '$&' + baseTag ) );
-
 						// Inject the extra stuff into <head>.
 						// Attention: do not change it before testing it well. (V2)
 						// This is tricky... if the head ends with <meta ... content type>,
 						// Firefox will break. But, it works if we place our extra stuff as
 						// the last elements in the HEAD.
 						data = data.replace( /<\/head\s*>/, headExtra + '$&' );
-
 						// Add the DOCTYPE back to it.
 						data = docType + data;
 					} else {
+
+						// headExtra = headExtra.slice(0,headExtra.indexOf('<link'));
 						data = config.docType +
 							'<html dir="' + config.contentsLangDirection + '"' +
 								' lang="' + ( config.contentsLanguage || editor.langCode ) + '">' +

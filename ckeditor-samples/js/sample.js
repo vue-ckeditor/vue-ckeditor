@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<meta charset="utf-8">
-	<script type="text/javascript" src = './init.js'></script>
-</head>
-<body>
-<div id="editor">
-					<h1>Hello world!</h1>
-					<p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
-</div>
-</body>
-<script type="text/javascript">
-		
-	/**
+/**
  * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
@@ -67,6 +52,3 @@ var initSample = ( function() {
 } )();
 
 // %LEAVE_UNMINIFIED% %REMOVE_LINE%
-initSample();
-</script>
-</html>

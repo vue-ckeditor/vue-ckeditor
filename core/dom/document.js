@@ -18,6 +18,7 @@
  * @constructor Creates a document class instance.
  * @param {Object} domDocument A native DOM document.
  */
+
 CKEDITOR.dom.document = function( domDocument ) {
 	CKEDITOR.dom.domObject.call( this, domDocument );
 };
@@ -52,7 +53,6 @@ CKEDITOR.tools.extend( CKEDITOR.dom.document.prototype, {
 				type: 'text/css',
 				href: cssFileUrl
 			} );
-
 			this.getHead().append( link );
 		}
 	},
@@ -272,7 +272,6 @@ CKEDITOR.tools.extend( CKEDITOR.dom.document.prototype, {
 		// the editable, e.g. by changing its default height.
 		if ( CKEDITOR.env.ie )
 			html = html.replace( /(?:^\s*<!DOCTYPE[^>]*?>)|^/i, '$&\n<script data-cke-temp="1">(' + CKEDITOR.tools.fixDomain + ')();</script>' );
-
 		this.$.write( html );
 		this.$.close();
 	},
