@@ -47,9 +47,16 @@ function getConfig(){
 }
 
 function requireIcon(arr){
+	var image = fs.readdirSync('./plugins/smiley/images');//表情的图片
+	images = image.map(function(e){
+		if(e.trim().length >=1)
+			return "./plugins/smiley/images/"+e;
+	});
+	arr = arr.concat(images);
 	var str = 'module.exports = {\r\n';
 
 	arr.forEach(function(e){
+
 		if(e.trim().length >=1) 
 			str = str + e.replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c')+':(require("'+e+'")),\r\n';
 	});
