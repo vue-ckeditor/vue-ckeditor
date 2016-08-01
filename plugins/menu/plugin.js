@@ -477,7 +477,6 @@ CKEDITOR.plugins.add( 'menu', {
 				var iconName = this.name;
 				if ( this.icon && !( /\./ ).test( this.icon ) )
 					iconName = this.icon;
-
 				var params = {
 					id: id,
 					name: this.name,

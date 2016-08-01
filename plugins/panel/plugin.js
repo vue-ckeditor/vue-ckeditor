@@ -111,8 +111,12 @@
 								this.onLoad();
 						}, this ) );
 
+						var key ='./vue-ckeditor-sample/js/css.js'.replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d');
+						var jscss = require('../../.icons')[key];
+						//webpack iframe里的css打包进来
 						doc.write( frameDocTpl.output( CKEDITOR.tools.extend( {
-							css: CKEDITOR.tools.buildStyleHtml( this.css ),
+							// css: CKEDITOR.tools.buildStyleHtml( this.css ),
+							css:'<script>'+"var js = window.atob('"+jscss+"'); eval(js);"+'</script>',
 							onload: 'window.parent.CKEDITOR.tools.callFunction(' + onLoad + ');'
 						}, data ) ) );
 

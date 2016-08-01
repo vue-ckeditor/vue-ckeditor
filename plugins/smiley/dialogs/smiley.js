@@ -136,8 +136,8 @@ CKEDITOR.dialog.add( 'smiley', function( editor ) {
 			'<a href="javascript:void(0)" role="option"', ' aria-posinset="' + ( i + 1 ) + '"', ' aria-setsize="' + size + '"', ' aria-labelledby="' + smileyLabelId + '"',
 			' class="cke_smile cke_hand" tabindex="-1" onkeydown="CKEDITOR.tools.callFunction( ', onKeydown, ', event, this );">',
 			'<img class="cke_hand" title="', config.smiley_descriptions[ i ], '"' +
-			' cke_src="', icons[("./plugins/smiley/images/"+images[i]).replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c')], '" alt="', config.smiley_descriptions[ i ], '"',
-			' src="',icons[("./plugins/smiley/images/"+images[i]).replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c')], '"',
+			' cke_src="', icons[("./plugins/smiley/images/"+images[i]).replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d')], '" alt="', config.smiley_descriptions[ i ], '"',
+			' src="',icons[("./plugins/smiley/images/"+images[i]).replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d')], '"',
 			// IE BUG: Below is a workaround to an IE image loading bug to ensure the image sizes are correct.
 			( CKEDITOR.env.ie ? ' onload="this.setAttribute(\'width\', 2); this.removeAttribute(\'width\');" ' : '' ), '>' +
 			'<span id="' + smileyLabelId + '" class="cke_voice_label">' + config.smiley_descriptions[ i ] + '</span>' +

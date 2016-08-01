@@ -29,7 +29,6 @@ CKEDITOR.plugins.add( 'menubutton', {
 							attributes: { 'aria-label': editor.lang.common.options }
 						}
 					} );
-
 					menu.onHide = CKEDITOR.tools.bind( function() {
 						var modes = this.command ? editor.getCommand( this.command ).modes : this.modes;
 						this.setState( !modes || modes[ editor.mode ] ? _.previousState : CKEDITOR.TRISTATE_DISABLED );

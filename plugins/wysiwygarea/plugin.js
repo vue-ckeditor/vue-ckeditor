@@ -318,7 +318,6 @@
 		proto: {
 			setData: function( data, isSnapshot ) {
 				var editor = this.editor;
-
 				if ( isSnapshot ) {
 					this.setHtml( data );
 					this.fixInitialSelection();
@@ -384,15 +383,13 @@
 						// Add the DOCTYPE back to it.
 						data = docType + data;
 					} else {
-
-						// headExtra = headExtra.slice(0,headExtra.indexOf('<link'));
 						data = config.docType +
 							'<html dir="' + config.contentsLangDirection + '"' +
 								' lang="' + ( config.contentsLanguage || editor.langCode ) + '">' +
 							'<head>' +
 								'<title>' + this._.docTitle + '</title>' +
 								baseTag +
-								headExtra +
+								// headExtra +//不写标签加载css,改为webpack打包
 							'</head>' +
 							'<body' + ( config.bodyId ? ' id="' + config.bodyId + '"' : '' ) +
 								( config.bodyClass ? ' class="' + config.bodyClass + '"' : '' ) +
@@ -424,7 +421,7 @@
 								'wasLoaded=1;' +
 							'}' +
 							( CKEDITOR.env.ie ? 'onload();' : 'document.addEventListener("DOMContentLoaded", onload, false );' ) +
-						'</script>';
+							'</script>';
 
 					// For IE<9 add support for HTML5's elements.
 					// Note: this code must not be deferred.
@@ -458,6 +455,7 @@
 					// Work around Firefox bug - error prune when called from XUL (#320),
 					// defer it thanks to the async nature of this method.
 					try {
+
 						doc.write( data );
 					} catch ( e ) {
 						setTimeout( function() {
@@ -585,7 +583,6 @@
 
 	function iframeCssFixes() {
 		var css = [];
-
 		// IE>=8 stricts mode doesn't have 'contentEditable' in effect
 		// on element unless it has layout. (#5562)
 		if ( CKEDITOR.document.$.documentMode >= 8 ) {

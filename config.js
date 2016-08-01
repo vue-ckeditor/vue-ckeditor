@@ -129,7 +129,10 @@ CKEDITOR.editorConfig = function( config ) {
 					+'./plugins/colorbutton/icons/bgcolor.png,'
 					+'./plugins/maximize/icons/maximize.png,'
 					+'./plugins/showblocks/icons/showblocks.png,'
-					+'./plugins/about/icons/about.png,';
+					+'./plugins/about/icons/about.png,'
+					+'./plugins/list/icons/numberedlist-rtl.png,'
+					+'./plugins/list/icons/bulletedlist-rtl.png,'
+					+'./plugins/indent/icons/outdent-rtl.png,'
+					+'./plugins/indent/icons/indent-rtl.png';
 };
-
 // %LEAVE_UNMINIFIED% %REMOVE_LINE%

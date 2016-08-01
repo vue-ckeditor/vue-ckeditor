@@ -878,7 +878,7 @@ CKEDITOR.tools.extend( CKEDITOR.dom.node.prototype, {
 		if ( CKEDITOR.env.edge && element && element.is( 'textarea', 'input' ) ) {
 			checkOnlyAttributes = true;
 		}
-
+		// console.log(element.$.innerHTML)
 		if ( !checkOnlyAttributes && element && typeof element.$.isContentEditable != 'undefined' ) {
 			return !( element.$.isContentEditable || element.data( 'cke-editable' ) );
 		}

@@ -277,6 +277,7 @@
 			dirStyleRegexp = /\bdirection\s*:\s*(.*?)\s*(:?$|;)/;
 
 		return function( name, val ) {
+
 			if ( !this.isReadOnly() ) {
 				var orgDir;
 				if ( ( name == ( isAttribute || isRemoveAttribute ? 'dir' : 'direction' ) || name == 'style' && ( isRemoveAttribute || dirStyleRegexp.test( val ) ) ) && !isOffline( this ) ) {

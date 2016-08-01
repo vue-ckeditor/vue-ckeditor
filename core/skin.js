@@ -132,8 +132,12 @@
 				path = path.replace( /'/g, '\\\'' );
 				path = '.'+path.slice(path.indexOf('/plugins'));
 				var iconObj = require('../.icons');
+				if(path.length<2){
+					return '';
+				}
+				// console.log(path)//toobar icon被打包进来了
 			return path &&
-				( 'background-image:url(\'' + iconObj[path.replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c')] + '\');background-position:0 ' + offset + 'px;background-size:' + bgsize + ';' );
+				( 'background-image:url(\'' + iconObj[path.replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d')] + '\');background-position:0 ' + offset + 'px;background-size:' + bgsize + ';' );
 		}
 	};
 
