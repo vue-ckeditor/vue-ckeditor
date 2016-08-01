@@ -13,18 +13,17 @@ var plugin = ["./plugins/about/plugin.js", "./plugins/a11yhelp/plugin.js", "./pl
 var plugindialog = ["./plugins/about/dialogs/about.js","./plugins/clipboard/dialogs/paste.js","./plugins/link/dialogs/anchor.js","./plugins/link/dialogs/link.js","./plugins/codesnippet/dialogs/codesnippet.js","./plugins/colordialog/dialogs/colordialog.js","./plugins/div/dialogs/div.js","./plugins/find/dialogs/find.js","./plugins/flash/dialogs/flash.js","./plugins/forms/dialogs/button.js","./plugins/forms/dialogs/checkbox.js","./plugins/forms/dialogs/form.js","./plugins/forms/dialogs/hiddenfield.js","./plugins/forms/dialogs/radio.js","./plugins/forms/dialogs/select.js","./plugins/forms/dialogs/textarea.js","./plugins/forms/dialogs/textfield.js","./plugins/iframe/dialogs/iframe.js","./plugins/forms/dialogs/button.js","./plugins/image/dialogs/image.js","./plugins/forms/dialogs/button.js","./plugins/image2/dialogs/image2.js","./plugins/forms/dialogs/button.js","./plugins/link/dialogs/link.js","./plugins/forms/dialogs/button.js","./plugins/liststyle/dialogs/liststyle.js","./plugins/smiley/dialogs/smiley.js","./plugins/specialchar/dialogs/specialchar.js","./plugins/table/dialogs/table.js","./plugins/templates/dialogs/templates.js","./plugins/dialog/dialogDefinition.js"]
 
 var css = ["./skins/"+skin+"/editor.css","./skins/"+skin+"/dialog.css",'./contents.css'];
-
 var skin = ['./skins/'+skin+'/skin.js'];//应该根据皮肤来选
 var style = ['./styles.js']
 var icons = configObj.icons.split(',');
-requireIconAndCss(icons,["./vue-ckeditor-sample/js/css.js"]);
 
 var pre = core.concat(config).concat(plugin).concat(plugindialog).concat(extraPlugins).concat(skin).concat(css);
 
 module.exports = {
 	entry:{
-		css:css,//它要先执行
-		ckeditor:pre
+		css:css,
+		// ckeditor:Wrapre(),
+
 	},
 	output:{
 		path:'./vue-ckeditor-sample/js',
@@ -38,7 +37,15 @@ module.exports = {
 			{test: /\.(png|jpg|svg|gif)$/, loader: 'url?=dest/image/[name].[ext]'}
 		]
 	},
+	//留给gulp执行的函数也一并抛出
+	fn:wrapPre
 }
+
+function wrapPre(){
+	requireIconAndCss(icons,["./vue-ckeditor-sample/js/css.js"]);
+	return pre;
+}
+
 
 function getConfig(){
 	var CKEDITOR ={};
@@ -64,9 +71,7 @@ function requireIconAndCss(arr,cssarr){
 	});
 
 	var cssjs = fs.readFileSync('./vue-ckeditor-sample/js/css.js','base64');
-	str = str+cssarr[0].replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d')+":'"+cssjs+"',\r\n";
+	str = str+cssarr[0].replace(/\./g,'a').replace(/\//g,'b').replace(/\\/g,'c').replace(/\-/g,'d')+":'"+cssjs+"'";
 
-    fs.writeFileSync('./.icons',str.slice(0,-3)+'\r\n}');
+    fs.writeFileSync('./.icons',str+'\r\n}');
 }
-
-//zh-cn取决于配置，先跑通
