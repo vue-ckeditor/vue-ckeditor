@@ -19,11 +19,15 @@ var icons = configObj.icons.split(',');
 
 var pre = core.concat(config).concat(plugin).concat(plugindialog).concat(extraPlugins).concat(skin).concat(css);
 
+function wrapPre(){
+	requireIconAndCss(icons,["./vue-ckeditor-sample/js/css.js"]);
+	return pre;
+}
+
 module.exports = {
 	entry:{
 		css:css,
-		// ckeditor:Wrapre(),
-
+		// ckeditor:wrapPre(),
 	},
 	output:{
 		path:'./vue-ckeditor-sample/js',
@@ -39,11 +43,6 @@ module.exports = {
 	},
 	//留给gulp执行的函数也一并抛出
 	fn:wrapPre
-}
-
-function wrapPre(){
-	requireIconAndCss(icons,["./vue-ckeditor-sample/js/css.js"]);
-	return pre;
 }
 
 

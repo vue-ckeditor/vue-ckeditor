@@ -19,11 +19,13 @@ gulp.task('PackageEditor',["PackageCss"],function(cb){
 
 gulp.task('vue',["PackageEditor"],function(cb){
 	webpack({
-		entry:{withVue:"./vue-ckeditor-sample/withVue.js"},
+		entry:{
+			withVue:"./vue-ckeditor-sample/withVue.js"
+		},
 		output:{
-		path:'./vue-ckeditor-sample/output',
-		filename:"[name].js"
-	},
+			path:'./vue-ckeditor-sample/output',
+			filename:"[name].js"
+		},
 	module:{
 		loaders:[
 			{test:/\.vue$/,loader:"vue"},
